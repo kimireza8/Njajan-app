@@ -9,10 +9,10 @@ class CreateStoresTable extends Migration
     public function up()
     {
         Schema::create('stores', function (Blueprint $table) {
-            $table->increments('store_id');
+            $table->uuid('store_id')->primary();
             $table->string('store_name');
             $table->string('store_image')->nullable();
-            $table->unsignedInteger('user_id');
+            $table->uuid('user_id');
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->timestamps();
         });

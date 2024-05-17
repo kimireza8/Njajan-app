@@ -7,6 +7,10 @@ export default defineConfig({
             input: [
                 'resources/sass/app.scss',
                 'resources/js/app.js',
+                'resources/views/themes/njajan/assets/css/main.css',
+                'resources/views/themes/njajan/assets/plugins/jqueryui/jquery-ui.css',
+                'resources/views/themes/njajan/assets/js/main.js',
+                'resources/views/themes/njajan/assets/plugins/jqueryui/jquery-ui.min.js',
             ],
             refresh: true,
         }),

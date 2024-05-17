@@ -9,9 +9,9 @@ class CreateTransactionsTable extends Migration
     public function up()
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->increments('transaction_id');
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('store_id');
+            $table->uuid('transaction_id')->primary();
+            $table->uuid('user_id');
+            $table->uuid('store_id');
             $table->decimal('total_transaction', 10, 2);
             $table->timestamps();
 

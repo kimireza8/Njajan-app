@@ -4,9 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\UuidTrait;
+
 
 class Cart extends Model
 {
+    use UuidTrait;
+
     protected $primaryKey = 'cart_id';
 
     protected $fillable = [

@@ -4,9 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\UuidTrait;
+
 
 class DetailTransaction extends Model
 {
+    use UuidTrait;
+
     protected $fillable = [
         'transaction_id',
         'product_id',

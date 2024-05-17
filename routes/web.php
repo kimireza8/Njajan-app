@@ -14,13 +14,21 @@ use App\Http\Controllers\CheckoutController; // Import namespace CheckoutControl
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+use App\Http\Controllers\ProductController;
 
 Auth::routes();
 
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::post('/checkout/{user}', [CheckoutController::class, 'checkout']);
 
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
+Route::prefix('shop')->group(function () {
+    Route::get('/', 'ShopController@index');
+});
